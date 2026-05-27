@@ -208,4 +208,4 @@ Estilo realista, 4K, atmosfera opresiva pero futurista.
 ## 📦 Instalación y Uso Local
 1. Clonar el repositorio:
 
-git clone [https://github.com/juliomorales-cell/matrix-frontend-tp2.git](https://github.com/juliomorales-cell/matrix-frontend-tp2.git)
+(https://github.com/juliomorales-cell/matrix-frontend-tp2.git)
