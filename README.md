@@ -5,7 +5,7 @@ Este proyecto es la interfaz frontend del sistema "The Matrix" para el Trabajo P
 
 La aplicación migra completamente la estructura del TP1 (HTML, CSS y JS Vanilla) hacia una arquitectura de componentes en React, utilizando Vite como bundler y Tailwind CSS para los estilos. Incluye navegación SPA con React Router, consumo de API externa, manejo de datos locales en JSON, galería interactiva y perfiles individuales con barras de habilidades animadas y carrusel de proyectos.
 
-🔗 **Link de Vercel:** [🔗 **Link de Vercel:** [Visitar Dashboard en Vivo](https://matrix-frontend-tp2-i5x1.vercel.app)
+🔗 **Link de Vercel:** (https://matrix-frontend-tp2-i5x1.vercel.app)
 
 ---
 
@@ -206,9 +206,6 @@ Estilo realista, 4K, atmosfera opresiva pero futurista.
 ---
 
 ## 📦 Instalación y Uso Local
-
 1. Clonar el repositorio:
- ```bash
- git clone [1. Clonar el repositorio:
-```bash
+
 git clone [https://github.com/juliomorales-cell/matrix-frontend-tp2.git](https://github.com/juliomorales-cell/matrix-frontend-tp2.git)
