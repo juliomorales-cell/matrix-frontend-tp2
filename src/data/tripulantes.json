@@ -1,0 +1,22 @@
+[
+  { "id": 1,  "nombre": "Neo",           "rol": "El Elegido",             "rango": "Soldado Libre" },
+  { "id": 2,  "nombre": "Morpheus",      "rol": "Capitán",                "rango": "Comandante" },
+  { "id": 3,  "nombre": "Trinity",       "rol": "Oficial de Sistemas",    "rango": "Teniente" },
+  { "id": 4,  "nombre": "Tank",          "rol": "Operador",               "rango": "Técnico Jefe" },
+  { "id": 5,  "nombre": "Dozer",         "rol": "Piloto",                 "rango": "Sargento" },
+  { "id": 6,  "nombre": "Switch",        "rol": "Combatiente",            "rango": "Cabo" },
+  { "id": 7,  "nombre": "Apoc",          "rol": "Combatiente",            "rango": "Cabo" },
+  { "id": 8,  "nombre": "Mouse",         "rol": "Especialista en IA",     "rango": "Técnico" },
+  { "id": 9,  "nombre": "Cypher",        "rol": "Agente Doble",           "rango": "Desertor" },
+  { "id": 10, "nombre": "Niobe",         "rol": "Capitana del Logos",     "rango": "Comandante" },
+  { "id": 11, "nombre": "Ghost",         "rol": "Primer Oficial",         "rango": "Teniente" },
+  { "id": 12, "nombre": "Oracle",        "rol": "Profeta",                "rango": "Civil Aliada" },
+  { "id": 13, "nombre": "Seraph",        "rol": "Guardaespaldas",         "rango": "Protector Dorado" },
+  { "id": 14, "nombre": "Sati",          "rol": "Programma Exiliada",     "rango": "Civil" },
+  { "id": 15, "nombre": "Merovingian",   "rol": "Señor del Exilio",       "rango": "Programa Exiliado" },
+  { "id": 16, "nombre": "Persephone",    "rol": "Informante",             "rango": "Programa Exiliada" },
+  { "id": 17, "nombre": "Keymaker",      "rol": "Guardián de Accesos",    "rango": "Programa Exiliado" },
+  { "id": 18, "nombre": "Link",          "rol": "Operador del Hammer",    "rango": "Técnico Jefe" },
+  { "id": 19, "nombre": "Roland",        "rol": "Capitán del Hammer",     "rango": "Comandante" },
+  { "id": 20, "nombre": "Zee",           "rol": "Defensora de Zion",      "rango": "Soldado Libre" }
+]

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... el resto de tu código css ... */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #000000;
+  color: #00FF41;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Clases reutilizables para el efecto neón en toda la app */
+.neon-text {
+  text-shadow: 0 0 5px #00FF41, 0 0 10px #008F11;
+}
+
+.neon-border {
+  box-shadow: 0 0 5px #00FF41, inset 0 0 5px #008F11;
+}
+
+/* Ocultar barra de scroll para que se vea más limpio */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #008F11;
+  border-radius: 4px;
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
