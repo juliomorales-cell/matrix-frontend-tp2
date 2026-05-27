@@ -34,32 +34,38 @@ La aplicación migra completamente la estructura del TP1 (HTML, CSS y JS Vanilla
 
 ## 📂 Estructura de Archivos
 
-/matrix-frontend
-│── /public # Assets estáticos (imágenes, audios)
-│ ├── Habitacion-Martin.png
-│ ├── trip-martin.jpg, trip-rodrigo.jpg, trip-facundo.jpg, trip-florencia.jpg
-│ ├── llamada.mp3, tono.mp3, seleccion-tripulante.mp3
-│ └── img/ # Imágenes para carrusel de proyectos
-│── /src
-│ ├── /components # Componentes modulares
-│ │ ├── ArbolRender.jsx
-│ │ ├── Bitacora.jsx
-│ │ ├── MatrixGallery.jsx
-│ │ ├── MatrixRain.jsx
-│ │ ├── PerfilBase.jsx (componente plantilla para perfiles)
-│ │ ├── PerfilFacundo.jsx
-│ │ ├── PerfilFlorencia.jsx
-│ │ ├── PerfilMartin.jsx
-│ │ └── PerfilRodrigo.jsx
-│ ├── /data # Base de datos local
-│ │ ├── registros.json
-│ │ └── tripulantes.json (20 objetos)
-│ ├── App.jsx # Enrutador principal, Sidebar, Home, Tripulación, JSON, API
-│ ├── index.css # Estilos base y configuración de Tailwind
-│ └── main.jsx # Punto de entrada de React
-│── package.json
-│── tailwind.config.js
-│── vite.config.js
+```text
+matrix-frontend/
+├── public/                 # Assets estáticos (imágenes, audios)
+│   ├── img/                # Imágenes para carrusel de proyectos
+│   ├── Habitacion-Martin.png
+│   ├── trip-martin.jpg
+│   ├── trip-rodrigo.jpg
+│   ├── trip-facundo.jpg
+│   ├── trip-florencia.jpg
+│   ├── llamada.mp3
+│   ├── tono.mp3
+│   └── seleccion-tripulante.mp3
+├── src/
+│   ├── components/         # Componentes modulares
+│   │   ├── ArbolRender.jsx
+│   │   ├── Bitacora.jsx
+│   │   ├── MatrixGallery.jsx
+│   │   ├── MatrixRain.jsx
+│   │   ├── PerfilBase.jsx   # Componente plantilla para perfiles
+│   │   ├── PerfilFacundo.jsx
+│   │   ├── PerfilFlorencia.jsx
+│   │   ├── PerfilMartin.jsx
+│   │   └── PerfilRodrigo.jsx
+│   ├── data/               # Base de datos local
+│   │   ├── registros.json
+│   │   └── tripulantes.json
+│   ├── App.jsx             # Enrutador principal, Sidebar, Home, Tripulación, JSON, API
+│   ├── index.css           # Estilos base y configuración de Tailwind
+│   └── main.jsx            # Punto de entrada de React
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
 └── README.md
 
 ---
