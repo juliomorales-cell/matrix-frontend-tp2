@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function ArbolRender() {
   return (
     <div className="flex flex-col gap-6 pb-10">

@@ -1,6 +1,6 @@
 import Bitacora from './components/Bitacora';
-import { useState, useEffect, useMemo, useRef } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams } from 'react-router-dom';
+import { useState, useMemo } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
 import { Terminal, Users, Database, Globe, Image as ImageIcon, BookOpen, Search, Network } from 'lucide-react';
 import MatrixRain from './components/MatrixRain';
 import MatrixGallery from './components/MatrixGallery';
@@ -10,10 +10,14 @@ import PerfilFacundo from './components/PerfilFacundo';
 import PerfilFlorencia from './components/PerfilFlorencia';
 import ArbolRender from './components/ArbolRender';
 import datosTripulantes from './data/tripulantes.json';
+import PortadaHome from './pages/PortadaHome';
+import RedExterna from './pages/RedExterna';
+import Tripulantes from './pages/Tripulantes';
 
 const tripulantes = [
   {
     id: 1,
+    img: '/trip-martin.jpg',
     nombre: "MARTÍN",
     rol: "ZION OPERATOR",
     genero: "hombre",
@@ -41,6 +45,7 @@ const tripulantes = [
   },
   {
     id: 2,
+    img: '/trip-rodrigo.jpg',
     nombre: "RODRIGO",
     rol: "ZION REBEL",
     genero: "hombre",
@@ -66,6 +71,7 @@ const tripulantes = [
   },
   {
     id: 3,
+    img: '/trip-facundo.jpg',
     nombre: "FACUNDO",
     rol: "SYSTEM ARCHITECT",
     genero: "hombre",
@@ -91,6 +97,7 @@ const tripulantes = [
   },
   {
     id: 4,
+    img: '/trip-florencia.jpg',
     nombre: "FLORENCIA",
     rol: "SIGNAL OPERATOR",
     genero: "mujer",
@@ -149,8 +156,8 @@ export default function App() {
 
         <main className="flex-1 overflow-y-auto p-8 z-10 relative">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/integrantes" element={<Tripulacion />} />
+            <Route path="/" element={<PortadaHome tripulantes={tripulantes}/>} />
+            <Route path="/integrantes" element={<Tripulantes tripulantes={tripulantes} />} />
             <Route path="/integrantes/:id" element={<PerfilTripulante />} />
             <Route path="/datos" element={<ArchivosJSON />} />
             <Route path="/api" element={<RedExterna />} />
@@ -176,179 +183,6 @@ function NavItem({ to, icon, text }) {
         <span>{text}</span>
       </Link>
     </li>
-  );
-}
-
-function Home() {
-  const [fase, setFase] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const audioLlamadaRef = useRef(null);
-  const audioTonoRef = useRef(null);
-
-  const iniciarSecuencia = () => {
-    setFase(1);
-    if (audioLlamadaRef.current) {
-      audioLlamadaRef.current.volume = 0.5;
-      audioLlamadaRef.current.play().catch(() => console.log("Audio 1 bloqueado"));
-    }
-  };
-
-  const handleLlamadaTerminada = () => {
-    setProgress(100);
-    setFase(2);
-    if (audioTonoRef.current) {
-      audioTonoRef.current.volume = 0.6;
-      audioTonoRef.current.play().catch(() => console.log("Audio 2 bloqueado"));
-    }
-  };
-
-  useEffect(() => {
-    if (fase !== 1) return;
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        const next = prev + Math.floor(Math.random() * 12) + 4;
-        if (next >= 99) {
-          clearInterval(interval);
-          return 99;
-        }
-        return next;
-      });
-    }, 300);
-    return () => clearInterval(interval);
-  }, [fase]);
-
-  return (
-    <div className="flex flex-col xl:flex-row h-full w-full gap-6 relative z-10 min-h-[500px]">
-      <audio ref={audioLlamadaRef} src="/llamada.mp3" onEnded={handleLlamadaTerminada} />
-      <audio ref={audioTonoRef} src="/tono.mp3" />
-      <div className="flex-1 border border-green-500 p-8 rounded bg-black/80 shadow-[0_0_15px_rgba(0,255,65,0.2)] flex flex-col relative h-full">
-        {fase === 0 ? (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <button onClick={iniciarSecuencia} className="text-green-500 border border-green-500 px-8 py-4 rounded font-bold text-xl hover:bg-green-500 hover:text-black transition-all hover:shadow-[0_0_20px_#00FF41] animate-pulse cursor-pointer">
-              &gt; INICIAR CONEXIÓN_
-            </button>
-          </div>
-        ) : (
-          <div className="space-y-6 flex flex-col h-full w-full">
-            <h2 className="text-2xl lg:text-3xl font-bold mb-2 flex items-center gap-2 text-green-500">
-              &gt; INICIALIZANDO SISTEMA<span className="animate-pulse font-black text-white">...</span>
-            </h2>
-            <div className="space-y-2 font-mono text-sm text-green-600">
-              <p>CARGANDO INTERFAZ<span className="animate-pulse text-white">...</span></p>
-              <p>ENLAZANDO MATRIX FRONTEND<span className="animate-pulse text-white">...</span></p>
-            </div>
-            <div className="space-y-2 mt-8">
-              <div className="flex justify-between text-xs text-green-600 font-mono">
-                <span>REGISTROS DE PERSONAL: PROCESANDO</span>
-                <span>{progress}%</span>
-              </div>
-              <div className="w-full h-4 border border-green-900 bg-black rounded overflow-hidden p-0.5">
-                <div className="h-full bg-green-500 shadow-[0_0_10px_#00FF41] transition-all duration-300 ease-out" style={{ width: `${progress}%` }}></div>
-              </div>
-            </div>
-            <div className="mt-12 font-mono flex-1 flex flex-col justify-center">
-              {fase === 2 ? (
-                <p className="text-green-500 font-bold text-2xl lg:text-3xl drop-shadow-[0_0_8px_#00FF41]">
-                  &gt; ACCESO CONCEDIDO:<br/>BIENVENIDO OPERADOR.
-                </p>
-              ) : (
-                <p className="text-green-600 animate-pulse mt-12 text-lg">
-                  &gt; DESENCRIPTANDO CÓDIGO FUENTE<span className="animate-pulse text-white">...</span>
-                </p>
-              )}
-            </div>
-          </div>
-        )}
-      </div>
-      {fase === 2 && (
-        <div className="w-full xl:w-1/2 border border-green-500 p-6 rounded bg-black/80 shadow-[0_0_15px_rgba(0,255,65,0.2)] flex flex-col animate-[fadeIn_1s_ease-out]">
-          <h2 className="text-2xl font-bold mb-4 text-green-500">
-            &gt; FICHEROS DE LA TRIPULACIÓN<span className="animate-pulse text-white">...</span>
-          </h2>
-          <div className="space-y-1 mb-6 text-xs text-green-600 font-mono border-b border-green-900 pb-4">
-            <p>&gt; OBTENIENDO PERFILES<span className="animate-pulse text-white">...</span> OK</p>
-            <p>&gt; CARGANDO BIOGRAFÍAS<span className="animate-pulse text-white">...</span> OK</p>
-            <p>&gt; FICHEROS DE PERFILES<span className="animate-pulse text-white">...</span> OK</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto pr-2 flex-1 max-h-[400px]">
-            {tripulantes.map((t) => (
-              <Link to={`/integrantes/${t.id}`} key={t.id} className="border border-green-900 p-3 rounded flex gap-4 hover:border-green-500 transition-colors bg-black/40 group relative overflow-hidden cursor-pointer hover:shadow-[0_0_15px_rgba(0,255,65,0.4)] no-underline">
-                <div className="w-16 h-16 shrink-0 border border-green-900 group-hover:border-green-500 rounded bg-black p-1 transition-colors relative z-10">
-                  <img src={t.avatar} alt={t.nombre} className="w-full h-full object-cover rounded" />
-                </div>
-                <div className="flex-1 min-w-0 relative z-10">
-                  <div className="flex justify-between items-start">
-                    <h3 className="text-green-500 font-bold text-lg leading-none mb-1 group-hover:text-white transition-colors">{t.nombre}</h3>
-                    <span className="text-green-500 text-xs opacity-60 group-hover:animate-spin">✶</span>
-                  </div>
-                  <p className="text-green-700 text-xs mb-2 tracking-widest">{t.rol.toUpperCase()}</p>
-                  <p className="text-gray-400 text-xs line-clamp-2 leading-relaxed">{t.bio}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-function Tripulacion() {
-  const navigate = useNavigate();
-  const [audioPlaying, setAudioPlaying] = useState(true);
-  const audioRef = useRef(null);
-
-  useEffect(() => {
-    if (audioRef.current && audioPlaying) {
-      audioRef.current.play().catch(err => console.log('Autoplay retenido:', err));
-    }
-    return () => { if (audioRef.current) audioRef.current.pause(); };
-  }, [audioPlaying]);
-
-  const toggleAudio = () => {
-    if (!audioRef.current) return;
-    if (audioPlaying) {
-      audioRef.current.pause();
-      setAudioPlaying(false);
-    } else {
-      audioRef.current.play().then(() => setAudioPlaying(true)).catch(() => {});
-    }
-  };
-
-  const tripulantesImgs = [
-    { ...tripulantes[0], img: '/trip-martin.jpg' },
-    { ...tripulantes[1], img: '/trip-rodrigo.jpg' },
-    { ...tripulantes[2], img: '/trip-facundo.jpg' },
-    { ...tripulantes[3], img: '/trip-florencia.jpg' },
-  ];
-
-  return (
-    <div className="flex flex-col gap-6 z-10 relative pb-10">
-      <audio ref={audioRef} src="/seleccion-tripulante.mp3" loop preload="auto" />
-      <button onClick={toggleAudio} className={`fixed top-24 right-6 z-40 border px-4 py-2 rounded text-xs font-bold tracking-widest transition-all duration-300 ${audioPlaying ? 'bg-green-500 text-black border-green-400 shadow-[0_0_15px_rgba(0,255,65,0.6)]' : 'text-green-500 border-green-800 hover:border-green-400'}`}>
-        {audioPlaying ? '🔊 SONIDO ACTIVO' : '🔇 ACTIVAR SONIDO'}
-      </button>
-      <div className="w-full p-6 border border-green-500 bg-black/80 rounded shadow-[0_0_15px_rgba(0,255,65,0.2)]">
-        <h2 className="text-3xl font-bold mb-1 text-green-500">&gt; NÚCLEO DE LA TRIPULACIÓN_</h2>
-        <p className="text-green-700 text-sm">Selecciona una silueta en el túnel de código para acceder al expediente.</p>
-      </div>
-      <div className="relative w-full rounded-lg border-2 border-green-900 shadow-[0_0_30px_rgba(0,255,65,0.15)] bg-black h-[550px] overflow-hidden">
-        <div className="absolute inset-0 grid grid-cols-4 z-20 w-full h-full">
-          {tripulantesImgs.map((trip) => (
-            <div key={trip.id} onClick={() => navigate(`/integrantes/${trip.id}`)} className="group relative flex flex-col justify-end items-center pb-12 cursor-pointer h-full">
-              <div className="absolute inset-0 flex items-center justify-center z-10">
-                <img src={trip.img} alt={trip.nombre} className="w-full h-full object-contain transition-all duration-500 ease-out group-hover:brightness-150 group-hover:contrast-125 group-hover:drop-shadow-[0_0_20px_rgba(0,255,65,0.8)]" />
-              </div>
-              <div className="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-green-500/20 mix-blend-screen" />
-              <div className="w-4/5 bg-black/95 border border-green-900 px-4 py-2 rounded transform transition-all duration-500 group-hover:border-green-400 group-hover:shadow-[0_0_40px_rgba(0,255,65,0.9)] group-hover:-translate-y-3 relative z-30">
-                <p className="text-green-700 group-hover:text-green-400 font-bold text-xl tracking-widest text-center">{trip.nombre}</p>
-                <p className="text-green-900 group-hover:text-green-500 text-xs text-center uppercase tracking-widest mt-1">{trip.rol}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -423,75 +257,6 @@ function ArchivosJSON() {
         <pre className="bg-black/90 border border-green-900 p-6 rounded overflow-auto text-xs text-green-500 leading-relaxed max-h-[60vh]">
           {JSON.stringify(resultados, null, 2)}
         </pre>
-      )}
-    </div>
-  );
-}
-
-const POSTS_POR_PAGINA = 5;
-function RedExterna() {
-  const [posts, setPosts] = useState([]);
-  const [paginaActual, setPaginaActual] = useState(1);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchDatos = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-        if (!response.ok) throw new Error('Conexión rechazada');
-        const data = await response.json();
-        setPosts(data);
-      } catch (err) {
-        setError("Error de conexión: Enlace con la Red Externa interrumpido por los Centinelas.");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchDatos();
-  }, []);
-
-  const totalPaginas = Math.ceil(posts.length / POSTS_POR_PAGINA);
-  const inicio = (paginaActual - 1) * POSTS_POR_PAGINA;
-  const postsPagina = posts.slice(inicio, inicio + POSTS_POR_PAGINA);
-
-  return (
-    <div className="flex flex-col gap-6 pb-10">
-      <div className="border border-green-500 bg-black/80 p-6 rounded shadow-[0_0_15px_rgba(0,255,65,0.2)]">
-        <h2 className="text-3xl font-bold text-green-500 mb-1">&gt; RED EXTERNA</h2>
-      </div>
-      
-      {loading ? (
-        <div className="flex flex-col items-center justify-center p-12 border border-green-900 border-dashed rounded bg-black/50">
-          <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin mb-4"></div>
-          <p className="text-green-500 font-mono animate-pulse">&gt; Accediendo a la matriz. Cargando datos de la Red Externa (Zion)...</p>
-        </div>
-      ) : error ? (
-        <div className="border-2 border-red-500 bg-red-900/20 p-6 rounded text-center animate-pulse shadow-[0_0_20px_rgba(255,0,0,0.4)]">
-          <h3 className="text-red-500 font-bold text-xl mb-2">⚠️ ALERTA CRÍTICA</h3>
-          <p className="text-red-400 font-mono">{error}</p>
-        </div>
-      ) : (
-        <>
-          <div className="grid gap-4">
-            {postsPagina.map(post => (
-              <div key={post.id} className="border-l-4 border-green-500 bg-black/70 p-5 rounded hover:bg-black/90 transition-colors">
-                <h3 className="text-green-500 text-lg font-bold capitalize">{post.title}</h3>
-                <p className="text-gray-400 text-sm">{post.body}</p>
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-center items-center gap-4 mt-4">
-            <button onClick={() => setPaginaActual(p => Math.max(1, p - 1))} disabled={paginaActual === 1} className="border border-green-500 text-green-500 px-4 py-2 text-sm rounded font-bold disabled:opacity-30 hover:bg-green-500 hover:text-black transition-all">
-              &lt; PREV
-            </button>
-            <span className="text-green-500 font-mono font-bold text-sm">PÁGINA {paginaActual} DE {totalPaginas || 1}</span>
-            <button onClick={() => setPaginaActual(p => Math.min(totalPaginas, p + 1))} disabled={paginaActual >= totalPaginas} className="border border-green-500 text-green-500 px-4 py-2 text-sm rounded font-bold disabled:opacity-30 hover:bg-green-500 hover:text-black transition-all">
-              NEXT &gt;
-            </button>
-          </div>
-        </>
       )}
     </div>
   );
