@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import LinkTripulante from "../components/LinkTripulante";
 
 // NOTA: Solo usa de cada tripulante: id, avatar, nombre, rol, bio
 export default function PortadaHome({ tripulantes }) {
@@ -127,29 +127,7 @@ export default function PortadaHome({ tripulantes }) {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto pr-2 flex-1 max-h-[400px]">
             {tripulantes.map((t) => (
-              <Link
-                to={`/integrantes/${t.id}`}
-                key={t.id}
-                className="border border-green-900 p-3 rounded flex gap-4 hover:border-green-500 transition-colors bg-black/40 group relative overflow-hidden cursor-pointer hover:shadow-[0_0_15px_rgba(0,255,65,0.4)] no-underline"
-              >
-                <div className="w-16 h-16 shrink-0 border border-green-900 group-hover:border-green-500 rounded bg-black p-1 transition-colors relative z-10">
-                  <img
-                    src={t.avatar}
-                    alt={t.nombre}
-                    className="w-full h-full object-cover rounded"
-                  />
-                </div>
-                <div className="flex-1 min-w-0 relative z-10">
-                  <div className="flex justify-between items-start">
-                    <h3 className="text-green-500 font-bold text-lg leading-none mb-1 group-hover:text-white transition-colors">
-                      {t.nombre}
-                    </h3>
-                  </div>
-                  <p className="text-green-700 text-xs mb-2 tracking-widest">
-                    {t.rol.toUpperCase()}
-                  </p>
-                </div>
-              </Link>
+              <LinkTripulante tripulante={t} />
             ))}
           </div>
         </div>
