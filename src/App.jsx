@@ -86,22 +86,21 @@ const tripulantes = [
   },
   {
     id: 2,
-    img: "/trip-rodrigo.jpg",
+    img: "/rodrigo.jpg",
     nombre: "RODRIGO",
-    rol: "ZION REBEL",
+    rol: "ESTUDIANTE Y DESARROLLADOR",
     genero: "hombre",
-    avatar:
-      "https://api.dicebear.com/7.x/bottts/svg?seed=Rodrigo&baseColor=000000&primaryColor=00FF41",
+    avatar: "rodrigo.jpg",
     github: "https://github.com/RodrigoZocco",
     ubicacion: "Argentina",
     edad: "27",
-    bio: "Rebelde de Zion con un talento especial para los sistemas de datos y la arquitectura de red. Su pasión por el basket es tan intensa como su obsesión por optimizar consultas SQL. Detecta anomalías en la Matrix antes que nadie.",
+    bio: "Soy una persona apasionada por la programación, me parece increible como internet acorta las distancias: datos viajando a una velocidad increible para informarnos del tema que busquemos en cuestion de segundos. Además practique Basket durante 18 años, deporte que me enseño a trabajar en equipo y generar un buen ambiente laboral, algo que aplico día a día, además de tratar de mejorar progresivamente.",
     habilidades: ["JavaScript", "TypeScript", "SQL", "NoSQL", "Docker", "UML"],
     peliculas: [
       {
         titulo: "Peaky Blinders",
         poster:
-          "https://image.tmdb.org/t/p/w342/vUUqzWa2LnHIVqkaKVlVGkPaQca.jpg",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg3UC7BnaeJ3Y5_qfSp1mHNconxITmfu_A5A&s",
       },
       {
         titulo: "Batman: El Caballero",
@@ -111,7 +110,7 @@ const tripulantes = [
       {
         titulo: "Interstellar",
         poster:
-          "https://image.tmdb.org/t/p/w342/gEU2QniE6E77NI6lCU6MxlNBvIE.jpg",
+          "https://m.media-amazon.com/images/I/91vIHsL-zjL._AC_UF894,1000_QL80_.jpg",
       },
     ],
     discos: [
@@ -119,19 +118,19 @@ const tripulantes = [
         titulo: "Mejor que el silencio",
         artista: "Nach Scratch",
         cover:
-          "https://upload.wikimedia.org/wikipedia/en/5/51/Metallica_-_Metallica.jpg",
+          "https://i.discogs.com/kmxhsisl5Pi_zt7lHRITX7__1kRxVaKfAMTmMC8O0fo/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MDQ3/MTMtMTM1MTU5OTcz/Ny0yMjY5LmpwZWc.jpeg",
       },
       {
         titulo: "Hybrid Theory",
         artista: "Linkin Park",
         cover:
-          "https://upload.wikimedia.org/wikipedia/en/9/9a/Hybrid_theory_album_cover.jpg",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYlfNs5F8TncDdcUTd3Jm6bXCn0w8pTLtblw&s",
       },
       {
         titulo: "Suena la Alarma",
         artista: "Los Cafres",
         cover:
-          "https://upload.wikimedia.org/wikipedia/en/9/9a/Hybrid_theory_album_cover.jpg",
+          "https://i.scdn.co/image/ab67616d0000b27346a888765544d2f977c5dc21",
       },
     ],
     nivel: "CREW MEMBER",

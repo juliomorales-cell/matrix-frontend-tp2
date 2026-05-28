@@ -144,15 +144,9 @@ export default function PortadaHome({ tripulantes }) {
                     <h3 className="text-green-500 font-bold text-lg leading-none mb-1 group-hover:text-white transition-colors">
                       {t.nombre}
                     </h3>
-                    <span className="text-green-500 text-xs opacity-60 group-hover:animate-spin">
-                      ✶
-                    </span>
                   </div>
                   <p className="text-green-700 text-xs mb-2 tracking-widest">
                     {t.rol.toUpperCase()}
-                  </p>
-                  <p className="text-gray-400 text-xs line-clamp-2 leading-relaxed">
-                    {t.bio}
                   </p>
                 </div>
               </Link>
