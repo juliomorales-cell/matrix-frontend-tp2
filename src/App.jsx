@@ -1,14 +1,5 @@
 import Bitacora from "./pages/Bitacora";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import {
-  Terminal,
-  Users,
-  Database,
-  Globe,
-  Image as ImageIcon,
-  BookOpen,
-  Network,
-} from "lucide-react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MatrixRain from "./components/MatrixRain";
 import GaleriaMatrix from "./pages/GaleriaMatrix";
 import ArbolRender from "./pages/ArbolRender";
@@ -17,6 +8,7 @@ import RedExterna from "./pages/RedExterna";
 import Tripulantes from "./pages/Tripulantes";
 import Tripulante from "./pages/Tripulante";
 import ArchivosJSON from "./pages/ArchivosJSON";
+import Sidebar from "./components/Sidebar";
 
 const tripulantes = [
   {
@@ -253,54 +245,9 @@ export default function App() {
       <div className="flex h-screen bg-black text-green-500 font-mono overflow-hidden relative">
         <MatrixRain />
 
-        <nav className="w-64 border-r-2 border-green-900 bg-black/90 flex flex-col z-10 shrink-0 shadow-[4px_0_20px_rgba(0,255,65,0.1)]">
-          <div className="p-6 border-b-2 border-green-900 flex flex-col items-center gap-3">
-            <div className="w-16 h-16 bg-black border-2 border-green-500 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(0,255,65,0.5)]">
-              <Terminal size={32} className="text-green-500 animate-pulse" />
-            </div>
-            <h1 className="text-3xl font-black text-green-500 text-center tracking-tighter drop-shadow-[0_0_10px_rgba(0,255,65,0.8)]">
-              THE SYSTEM
-              <br />
-              GROUP 1
-            </h1>
-          </div>
+        <Sidebar />
 
-          <ul className="flex-1 p-6 space-y-4 overflow-y-auto">
-            <NavItem to="/" icon={<Terminal size={24} />} text=">_Inicio" />
-            <NavItem
-              to="/integrantes"
-              icon={<Users size={24} />}
-              text="Tripulacion"
-            />
-            <NavItem
-              to="/datos"
-              icon={<Database size={24} />}
-              text="Archivos JSON"
-            />
-            <NavItem to="/api" icon={<Globe size={24} />} text="Red Externa" />
-            <NavItem
-              to="/galeria"
-              icon={<ImageIcon size={24} />}
-              text="Galería"
-            />
-            <NavItem
-              to="/bitacora"
-              icon={<BookOpen size={24} />}
-              text="Bitácora"
-            />
-            <NavItem
-              to="/arbol"
-              icon={<Network size={24} />}
-              text="Árbol Render"
-            />
-          </ul>
-
-          <div className="p-4 border-t-2 border-green-900 text-xs text-center text-green-800">
-            V 2.0.26 - THE SYSTEM GROUP 1
-          </div>
-        </nav>
-
-        <main className="flex-1 overflow-y-auto p-8 z-10 relative">
+        <main className="flex-1 overflow-y-auto p-6 z-10 relative min-w-0">
           <Routes>
             <Route
               path="/"
@@ -331,19 +278,5 @@ export default function App() {
         </main>
       </div>
     </Router>
-  );
-}
-
-function NavItem({ to, icon, text }) {
-  return (
-    <li className="list-none">
-      <Link
-        to={to}
-        className="flex items-center gap-3 p-2 text-lg font-bold text-[#00FF41] no-underline hover:text-white hover:translate-x-2 transition-all duration-300 rounded hover:bg-green-900/30 drop-shadow-[0_0_5px_rgba(0,255,65,0.8)]"
-      >
-        <span className="text-[#00FF41]">{icon}</span>
-        <span>{text}</span>
-      </Link>
-    </li>
   );
 }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,19 +6,23 @@
 
 body {
   background-color: #000000;
-  color: #00FF41;
-  font-family: 'Courier New', Courier, monospace;
+  color: #00ff41;
+  font-family: "Courier New", Courier, monospace;
   margin: 0;
   overflow-x: hidden;
 }
 
+a:visited {
+  color: inherit;
+}
+
 /* Clases reutilizables para el efecto neón en toda la app */
 .neon-text {
-  text-shadow: 0 0 5px #00FF41, 0 0 10px #008F11;
+  text-shadow: 0 0 5px #00ff41, 0 0 10px #008f11;
 }
 
 .neon-border {
-  box-shadow: 0 0 5px #00FF41, inset 0 0 5px #008F11;
+  box-shadow: 0 0 5px #00ff41, inset 0 0 5px #008f11;
 }
 
 /* Ocultar barra de scroll para que se vea más limpio */
@@ -29,16 +33,24 @@ body {
   background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #008F11;
+  background: #008f11;
   border-radius: 4px;
 }
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
