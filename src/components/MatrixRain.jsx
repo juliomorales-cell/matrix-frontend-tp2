@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 export default function MatrixRain({ isPaused = false }) {
   const canvasRef = useRef(null);
@@ -11,7 +11,7 @@ export default function MatrixRain({ isPaused = false }) {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
 
     const setCanvasSize = () => {
       canvas.width = window.innerWidth;
@@ -20,7 +20,8 @@ export default function MatrixRain({ isPaused = false }) {
 
     setCanvasSize();
 
-    const matrixChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^%+-/~{[|`]}";
+    const matrixChars =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^%+-/~{[|`]}";
     const characters = matrixChars.split("");
     const fontSize = 16;
     let columns = Math.ceil(canvas.width / fontSize);
@@ -29,10 +30,10 @@ export default function MatrixRain({ isPaused = false }) {
     const draw = () => {
       if (isPausedRef.current) return;
 
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillStyle = "rgba(0, 0, 0, 0.12)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(0, 255, 65, 0.28)";
 
-      ctx.fillStyle = "#00FF41";
       ctx.font = `${fontSize}px monospace`;
 
       for (let i = 0; i < drops.length; i++) {
@@ -54,11 +55,11 @@ export default function MatrixRain({ isPaused = false }) {
       drops = Array(columns).fill(1);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       clearInterval(interval);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -66,7 +67,7 @@ export default function MatrixRain({ isPaused = false }) {
     <canvas
       ref={canvasRef}
       className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"
-      style={{ backgroundColor: 'black' }}
+      style={{ backgroundColor: "black" }}
     />
   );
 }
