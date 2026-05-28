@@ -4,11 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ... el resto de tu código css ... */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body {
   background-color: #000000;
   color: #00FF41;
