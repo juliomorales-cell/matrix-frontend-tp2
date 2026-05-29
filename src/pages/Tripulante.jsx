@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 
-import PerfilMartin from '../components/PerfilMartin';
-import PerfilRodrigo from '../components/PerfilRodrigo';
-import PerfilFacundo from '../components/PerfilFacundo';
-import PerfilFlorencia from '../components/PerfilFlorencia';
+import PerfilMartin from '../profiles/PerfilMartin';
+import PerfilRodrigo from '../profiles/PerfilRodrigo';
+import PerfilFacundo from '../profiles/PerfilFacundo';
+import PerfilFlorencia from '../profiles/PerfilFlorencia';
 
 export default function Tripulante({ tripulantes }) {
   const { id } = useParams();
