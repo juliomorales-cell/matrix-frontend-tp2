@@ -13,7 +13,7 @@ import Sidebar from "./components/Sidebar";
 const tripulantes = [
   {
     id: 1,
-    img: "/trip-martin.jpg",
+    img: "/martinperfil.jpeg",
     nombre: "MARTÍN",
     rol: "ZION OPERATOR",
     genero: "hombre",

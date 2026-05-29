@@ -150,13 +150,13 @@ function Carrusel({ items, children }) {
 // ✅ DiscoCard con soporte para Guns N' Roses
 function DiscoCard({ disco }) {
   const getAudioSrc = (titulo, artista = "") => {
-    const t = `${titulo} ${artista}`.toLowerCase();
-    if (t.includes("tengo que parar")) return "/audio/tengo_que_parar.mp3";
-    if (t.includes("giros")) return "/audio/giros.mp3";
-    if (t.includes("the black album")) return "/audio/the_black_album.mp3";
-    if (t.includes("guns") && t.includes("roses")) return "/audio/guns_n_roses.mp3";
-    return null;
-  };
+  const t = `${titulo} ${artista}`.toLowerCase();
+  if (t.includes("tengo que parar")) return "/tengo_que_parar.mp3";
+  if (t.includes("giros")) return "/giros.mp3";
+  if (t.includes("the black album")) return "/the_black_album.mp3";
+  if (t.includes("guns") && t.includes("roses")) return "/guns_n_roses.mp3";
+  return null;
+};
 
   const audioRef = useRef(null);
 
