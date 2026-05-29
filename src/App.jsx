@@ -8,7 +8,7 @@ import RedExterna from "./pages/RedExterna";
 import Tripulantes from "./pages/Tripulantes";
 import Tripulante from "./pages/Tripulante";
 import ArchivosJSON from "./pages/ArchivosJSON";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 const tripulantes = [
   {
