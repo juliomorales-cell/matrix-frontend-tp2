@@ -1,15 +1,15 @@
 import { useState, useMemo } from "react";
 import { Search } from "lucide-react";
-import datosTripulantes from "../data/tripulantes.json";
+import datosPersonajesMatrix from "../data/personajes-matrix.json";
 
-export default function ArchivosJSON() {
+const ArchivosJSON = () => {
   const [busqueda, setBusqueda] = useState("");
   const [vistaActiva, setVistaActiva] = useState("tabla");
 
   const resultados = useMemo(() => {
     const q = busqueda.toLowerCase().trim();
-    if (!q) return datosTripulantes;
-    return datosTripulantes.filter(
+    if (!q) return datosPersonajesMatrix;
+    return datosPersonajesMatrix.filter(
       (t) =>
         t.nombre.toLowerCase().includes(q) || t.rol.toLowerCase().includes(q)
     );
@@ -90,3 +90,5 @@ export default function ArchivosJSON() {
     </div>
   );
 }
+
+export default ArchivosJSON

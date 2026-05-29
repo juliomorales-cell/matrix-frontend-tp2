@@ -1,8 +1,0 @@
-[
-  { "id": 1, "nombre": "Nebuchadnezzar", "tipo": "Nave de Combate", "capitan": "Morpheus", "estado": "Destruida" },
-  { "id": 2, "nombre": "Logos", "tipo": "Nave de Asalto", "capitan": "Niobe", "estado": "Activa" },
-  { "id": 3, "nombre": "Osiris", "tipo": "Nave de Reconocimiento", "capitan": "Thadeus", "estado": "Destruida" },
-  { "id": 4, "nombre": "Hammer (Mjolnir)", "tipo": "Nave de Guerra", "capitan": "Roland", "estado": "Activa" },
-  { "id": 5, "nombre": "Caduceus", "tipo": "Nave Mensajera", "capitan": "Ballard", "estado": "Destruida" },
-  { "id": 6, "nombre": "Icarus", "tipo": "Nave de Combate", "capitan": "Ajax", "estado": "Activa" }
-]

@@ -54,7 +54,7 @@ matrix-frontend/
 │   │   ├── MatrixRain.jsx
 │   ├── data/               # Base de datos local
 │   │   ├── navItems.jsx
-│   │   ├── registros.json
+│   │   ├── personajes-matrix.json
 │   │   └── tripulantes.json
 │   ├── profiles/
 │   │   ├── PerfilBase.jsx  # Componente plantilla para perfiles
