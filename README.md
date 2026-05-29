@@ -49,18 +49,28 @@ matrix-frontend/
 │   └── seleccion-tripulante.mp3
 ├── src/
 │   ├── components/         # Componentes modulares
-│   │   ├── ArbolRender.jsx
-│   │   ├── Bitacora.jsx
-│   │   ├── MatrixGallery.jsx
+│   │   ├── Sidebar/
+│   │   ├── LinkTripulante.jsx
 │   │   ├── MatrixRain.jsx
-│   │   ├── PerfilBase.jsx   # Componente plantilla para perfiles
+│   ├── data/               # Base de datos local
+│   │   ├── navItems.jsx
+│   │   ├── registros.json
+│   │   └── tripulantes.json
+│   ├── profiles/
+│   │   ├── PerfilBase.jsx  # Componente plantilla para perfiles
 │   │   ├── PerfilFacundo.jsx
 │   │   ├── PerfilFlorencia.jsx
 │   │   ├── PerfilMartin.jsx
 │   │   └── PerfilRodrigo.jsx
-│   ├── data/               # Base de datos local
-│   │   ├── registros.json
-│   │   └── tripulantes.json
+│   ├── pages/
+│   │   ├── ArbolRender.jsx
+│   │   ├── ArchivosJSON.jsx
+│   │   ├── Bitacora.jsx
+│   │   ├── GaleriaMatrix.jsx
+│   │   ├── PortadaHome.jsx
+│   │   ├── RedExterna.jsx
+│   │   ├── Tripulante.jsx
+│   │   ├── Tripulantes.jsx
 │   ├── App.jsx             # Enrutador principal, Sidebar, Home, Tripulación, JSON, API
 │   ├── index.css           # Estilos base y configuración de Tailwind
 │   └── main.jsx            # Punto de entrada de React
