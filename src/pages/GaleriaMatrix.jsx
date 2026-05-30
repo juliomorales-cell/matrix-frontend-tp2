@@ -96,7 +96,7 @@ export default function GaleriaMatrix() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-black text-white font-mono p-6 relative">
+    <div className="w-full min-h-screen text-white font-mono p-6 relative">
       {/* Reproductor de audio (oculto) */}
       <audio
         ref={audioRef}

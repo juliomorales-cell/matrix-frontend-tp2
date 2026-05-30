@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import MatrixRain from "../components/MatrixRain";
 
 const ahora = Date.now();
 
@@ -150,12 +149,11 @@ export default function Bitacora() {
 
   return (
     <div
-      className="w-full h-full min-h-[600px] flex flex-col relative overflow-hidden bg-black border border-green-900/40 select-none text-green-500"
+      className="w-full h-full min-h-[600px] flex flex-col relative overflow-hidden bg-black/80 border border-green-900/40 select-none text-green-500"
       onClick={() => {
         if (step === 0) iniciarSecuencia();
       }}
     >
-      <MatrixRain isPaused={step === 1} isInBackground={step === 2} />
 
       {/* 🎵 REPRODUCTORES DE AUDIO */}
       <audio
@@ -180,42 +178,44 @@ export default function Bitacora() {
       {step === 1 && (
         <div
           style={{
-            position: "fixed",
+            position: "absolute",
             top: 0,
             left: 0,
             right: 0,
             bottom: 0,
-            width: "100vw",
-            height: "100vh",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             backgroundColor: "rgba(0,0,0,0.7)",
             zIndex: 9999,
             pointerEvents: "none",
+            padding: "1rem",
           }}
         >
           <div
             style={{
               textAlign: "center",
               animation: "glitchPulse 0.8s infinite ease-in-out",
+              width: "100%",
+              maxWidth: "90vw",
             }}
           >
             <h1
               style={{
-                fontSize: "clamp(2rem, 10vw, 5rem)",
+                fontSize: "clamp(1.2rem, 6vw, 5rem)",
                 fontWeight: 900,
                 fontFamily: "monospace",
                 textTransform: "uppercase",
-                letterSpacing: "0.2em",
+                letterSpacing: "0.1em",
                 color: "#00FF41",
                 backgroundColor: "black",
-                padding: "1rem 2rem",
+                padding: "0.75rem 1.25rem",
                 border: "4px solid #00FF41",
                 borderRadius: "0.5rem",
                 boxShadow: "0 0 50px rgba(0,255,65,0.8)",
                 margin: 0,
-                whiteSpace: "nowrap",
+                whiteSpace: "normal",
+                wordBreak: "break-word",
               }}
             >
               SYSTEM FAILURE

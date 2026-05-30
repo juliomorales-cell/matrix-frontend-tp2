@@ -14,12 +14,10 @@ import datosTripulantes from "./data/tripulantes.json"
 export default function App() {
   return (
     <Router>
-      <div className="flex h-screen bg-black text-green-500 font-mono overflow-hidden relative">
+      <div className="flex h-screen text-green-500 font-mono overflow-hidden relative">
         <MatrixRain />
-
         <Sidebar />
-
-        <main className="flex-1 overflow-y-auto p-6 z-10 relative min-w-0">
+        <main className="flex-1 overflow-y-auto p-6 z-10 relative min-w-0 bg-transparent">
           <Routes>
             <Route
               path="/"

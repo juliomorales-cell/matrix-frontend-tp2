@@ -127,7 +127,7 @@ export default function PortadaHome({ tripulantes }) {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto pr-2 flex-1 max-h-[400px]">
             {tripulantes.map((t) => (
-              <LinkTripulante tripulante={t} />
+              <LinkTripulante tripulante={t} key={t.id} />
             ))}
           </div>
         </div>
