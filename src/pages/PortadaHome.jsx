@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import LinkTripulante from "../components/LinkTripulante";
+import TeamGrid from "../components/TeamGrid"
 
 // NOTA: Solo usa de cada tripulante: id, avatar, nombre, rol, bio
-export default function PortadaHome({ tripulantes }) {
+const PortadaHome = ({ tripulantes }) => {
   const [fase, setFase] = useState(0);
   const [progress, setProgress] = useState(0);
   const audioLlamadaRef = useRef(null);
@@ -125,13 +125,12 @@ export default function PortadaHome({ tripulantes }) {
               <span className="animate-pulse text-white">...</span> OK
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto pr-2 flex-1 max-h-[400px]">
-            {tripulantes.map((t) => (
-              <LinkTripulante tripulante={t} key={t.id} />
-            ))}
-          </div>
+
+          <TeamGrid members={tripulantes} />
         </div>
       )}
     </div>
   );
 }
+
+export default PortadaHome

@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { Search } from "lucide-react";
 import datosPersonajesMatrix from "../data/personajes-matrix.json";
+import SectionHeader from "../components/SectionHeader";
 
 const ArchivosJSON = () => {
   const [busqueda, setBusqueda] = useState("");
@@ -17,12 +18,12 @@ const ArchivosJSON = () => {
 
   return (
     <div className="flex flex-col gap-6 pb-10">
-      <div className="border border-green-500 bg-black/80 p-6 rounded shadow-[0_0_15px_rgba(0,255,65,0.2)]">
-        <h2 className="text-3xl font-bold text-green-500 mb-1">
-          &gt; ARCHIVOS JSON
-        </h2>
-        <p className="text-green-700 text-sm">Explorador de base de datos.</p>
-      </div>
+      
+      <SectionHeader
+        title="ARCHIVOS JSON"
+        subtitle="Explorador de base de datos."
+      />
+
       <div className="flex gap-3">
         <div className="relative flex-1">
           <Search

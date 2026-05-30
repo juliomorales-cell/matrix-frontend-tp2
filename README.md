@@ -39,40 +39,14 @@ La aplicación migra completamente la estructura del TP1 (HTML, CSS y JS Vanilla
 matrix-frontend/
 ├── public/                 # Assets estáticos (imágenes, audios)
 │   ├── img/                # Imágenes para carrusel de proyectos
-│   ├── Habitacion-Martin.png
-│   ├── trip-martin.jpg
-│   ├── trip-rodrigo.jpg
-│   ├── trip-facundo.jpg
-│   ├── trip-florencia.jpg
-│   ├── llamada.mp3
-│   ├── tono.mp3
-│   └── seleccion-tripulante.mp3
 ├── src/
 │   ├── components/         # Componentes modulares
-│   │   ├── Sidebar/
-│   │   ├── LinkTripulante.jsx
-│   │   ├── MatrixRain.jsx
 │   ├── data/               # Base de datos local
-│   │   ├── navItems.jsx
-│   │   ├── personajes-matrix.json
-│   │   └── tripulantes.json
-│   ├── profiles/
-│   │   ├── PerfilBase.jsx  # Componente plantilla para perfiles
-│   │   ├── PerfilFacundo.jsx
-│   │   ├── PerfilFlorencia.jsx
-│   │   ├── PerfilMartin.jsx
-│   │   └── PerfilRodrigo.jsx
-│   ├── pages/
-│   │   ├── ArbolRender.jsx
-│   │   ├── ArchivosJSON.jsx
-│   │   ├── Bitacora.jsx
-│   │   ├── GaleriaMatrix.jsx
-│   │   ├── PortadaHome.jsx
-│   │   ├── RedExterna.jsx
-│   │   ├── Tripulante.jsx
-│   │   ├── Tripulantes.jsx
-│   ├── App.jsx             # Enrutador principal, Sidebar, Home, Tripulación, JSON, API
-│   ├── index.css           # Estilos base y configuración de Tailwind
+│   ├── profiles/           # Perfiles de integrantes
+│   ├── pages/              # Páginas de cada ruta
+│   ├── App.jsx             # Layout general
+│   ├── global.css          # Estilos base y configuración de Tailwind
+│   ├── MainRoutes.css      # Enrutador principal
 │   └── main.jsx            # Punto de entrada de React
 ├── package.json
 ├── tailwind.config.js

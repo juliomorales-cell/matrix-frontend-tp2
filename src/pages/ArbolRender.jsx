@@ -1,11 +1,12 @@
-export default function ArbolRender() {
+import SectionHeader from "../components/SectionHeader";
+
+const ArbolRender = () => {
   return (
     <div className="flex flex-col gap-6 pb-10">
-      <div className="border border-green-500 bg-black/80 p-6 rounded shadow-[0_0_15px_rgba(0,255,65,0.2)]">
-        <h2 className="text-3xl font-bold text-green-500 mb-1">&gt; ÁRBOL DE RENDERIZADO</h2>
-        <p className="text-green-700 text-sm font-mono">Representación esquemática de la jerarquía de componentes del sistema.</p>
-      </div>
-
+      <SectionHeader
+        title="ÁRBOL DE RENDERIZADO"
+        subtitle="Representación esquemática de la jerarquía de componentes del sistema."
+      />
       <div className="bg-black/90 border border-green-900 rounded p-8 overflow-x-auto shadow-inner">
         <ul className="text-green-500 font-mono text-sm leading-relaxed space-y-2">
           <li className="font-bold text-lg text-[#00FF41] flex items-center gap-2">
@@ -105,3 +106,5 @@ export default function ArbolRender() {
     </div>
   );
 }
+
+export default ArbolRender

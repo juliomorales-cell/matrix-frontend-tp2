@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
-import Header from '../components/RedExterna/Header'
 import LoadingState from '../components/RedExterna/LoadingState'
 import ErrorState from '../components/RedExterna/ErrorState'
 import PostsList from '../components/RedExterna/PostsList'
 import Pagination from '../components/RedExterna/Pagination'
+import SectionHeader from '../components/SectionHeader'
 
 const POSTS_POR_PAGINA = 5
 const API_URL = 'https://jsonplaceholder.typicode.com/posts'
@@ -59,7 +59,10 @@ const RedExterna = () => {
 
 	return (
 		<div className="flex flex-col gap-6 pb-10">
-			<Header />
+			<SectionHeader
+				title="RED EXTERNA"
+				subtitle="Datos consumidos desde API externa."
+			/>
 
 			{loading && <LoadingState />}
 

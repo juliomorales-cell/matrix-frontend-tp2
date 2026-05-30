@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from "react";
+import SectionHeader from "../components/SectionHeader";
+import Button from "../components/Button";
 
 const ahora = Date.now();
 
-export default function Bitacora() {
+const Bitacora = () => {
   const [entradas, setEntradas] = useState([
     {
       id: 1,
@@ -48,7 +50,7 @@ export default function Bitacora() {
     timeoutRef.current = setTimeout(() => {
       setStep(2); // Aparece la Bitácora
       timeoutRef.current = null;
-    }, 10000);
+    }, 1000);
   };
 
   // 🎵 Cuando termina neo-hablando.mp4 (puede ser antes de los 7 segundos)
@@ -231,22 +233,15 @@ export default function Bitacora() {
           onClick={(e) => e.stopPropagation()}
         >
           {/* CABECERA CON BOTÓN DE MUTE */}
-          <div className="border border-green-500 bg-black/80 p-6 rounded shadow-[0_0_15px_rgba(0,255,65,0.2)] flex justify-between items-center">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-green-500 mb-1 font-mono">
-                &gt; BITÁCORA DE EVENTOS
-              </h2>
-              <p className="text-green-700 text-sm font-mono">
-                Registro manual de anomalías y sucesos en el sistema.
-              </p>
-            </div>
-            <button
-              onClick={toggleMute}
-              className="border border-green-500 p-3 rounded hover:bg-green-500 hover:text-black transition-colors text-2xl"
-            >
-              {muted ? "🔇" : "🔊"}
-            </button>
-          </div>
+          <SectionHeader
+            title="BITÁCORA DE EVENTOS"
+            subtitle="Registro manual de anomalías y sucesos en el sistema."
+          />
+          
+          <Button
+            onClick={toggleMute}
+            text={muted ? "🔇" : "🔊"}
+          />
 
           <form
             onSubmit={agregarEntrada}
@@ -308,3 +303,5 @@ export default function Bitacora() {
     </div>
   );
 }
+
+export default Bitacora
