@@ -52,3 +52,14 @@ body,
     transform: translateY(0);
   }
 }
+
+/* Perfil Facundo */
+@keyframes matrixLoad {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}

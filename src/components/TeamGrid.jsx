@@ -13,10 +13,10 @@ const TeamGrid = ({ members }) => {
 			{members.map((member) => (
 				<Card
 					key={member.id}
-					onclick={() => onClick(member.id)}
+					onClick={() => onClick(member.id)}
 					title={member.nombre}
 					subtitle={member.role}
-					imgSrc={member.img}
+					imgSrc={member.avatar}
 				/>
 			))}
 		</div>

@@ -1,7 +1,7 @@
-const Card = ({ onclick, imgSrc, title, subtitle }) => {
+const Card = ({ onClick, imgSrc, title, subtitle }) => {
 	return (
 		<div
-			onClick={onclick}
+			onClick={onClick}
 			className="group relative cursor-pointer border border-green-900 rounded overflow-hidden bg-black hover:border-green-500 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)] transition-all duration-300"
 		>
 			<div className="aspect-square w-full overflow-hidden">

@@ -1,11 +1,10 @@
 [
 	{
 		"id": 1,
-		"img": "/martinperfil.jpeg",
 		"nombre": "MARTÍN",
 		"rol": "ZION OPERATOR",
 		"genero": "hombre",
-		"avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=Martin&baseColor=000000&primaryColor=00FF41",
+		"avatar": "martinperfil.jpeg",
 		"github": "https://github.com/usuario-martin",
 		"ubicacion": "CABA",
 		"edad": "47",
@@ -64,7 +63,6 @@
 	},
 	{
 		"id": 2,
-		"img": "/rodrigo.jpg",
 		"nombre": "RODRIGO",
 		"rol": "ESTUDIANTE Y DESARROLLADOR",
 		"genero": "hombre",
@@ -118,61 +116,85 @@
 	},
 	{
 		"id": 3,
-		"img": "/trip-facundo.jpg",
 		"nombre": "FACUNDO",
 		"rol": "SYSTEM ARCHITECT",
-		"genero": "hombre",
-		"avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=Facundo&baseColor=000000&primaryColor=00FF41",
-		"github": "https://github.com/usuario-facundo",
+		"avatar": "/facundo/facundo.webp",
 		"ubicacion": "Entre Ríos",
-		"edad": "42",
 		"bio": "Arquitecto de sistemas con visión holística de la realidad digital. Construye los puentes entre el mundo simulado y la verdad. Su manejo del código es tan preciso como una espada de luz en la oscuridad de la Matrix.",
-		"habilidades": [
-			"HTML",
-			"CSS",
-			"JavaScript",
-			"TypeScript",
-			"SQL",
-			"React"
-		],
-		"peliculas": [
-			{
-				"titulo": "The Lord of the Rings",
-				"poster": "https://image.tmdb.org/t/p/w342/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg"
-			},
-			{
-				"titulo": "The Matrix",
-				"poster": "https://image.tmdb.org/t/p/w342/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg"
-			},
-			{
-				"titulo": "Schindler's List",
-				"poster": "https://image.tmdb.org/t/p/w342/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg"
-			}
-		],
-		"discos": [
-			{
-				"titulo": "The Dark Side of the Moon",
-				"artista": "Pink Floyd",
-				"cover": "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png"
-			},
-			{
-				"titulo": "Led Zeppelin IV",
-				"artista": "Led Zeppelin",
-				"cover": "https://upload.wikimedia.org/wikipedia/en/2/26/Led_Zeppelin_-_Led_Zeppelin_IV.jpg"
-			},
-			{
-				"titulo": "Nevermind",
-				"artista": "Nirvana",
-				"cover": "https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg"
-			}
-		],
 		"nivel": "CAPTAIN",
-		"coverImage": "https://media.giphy.com/media/G6sJqVpD1U4jC/giphy.gif",
-		"secreto": "🎉 ¡Hay un secreto oculto esperando ser descubierto!"
+		"habilidades": [
+			{ "nombre": "React", "nivel": 92 },
+			{ "nombre": "Next.js", "nivel": 84 },
+			{ "nombre": "Node.js", "nivel": 78 },
+			{ "nombre": "Cloudflare", "nivel": 76 },
+			{ "nombre": "Tailwind CSS", "nivel": 88 },
+			{ "nombre": "TypeScript", "nivel": 82 }
+		],
+		"projectos": [
+			{
+				"titulo": "Nebuchadnezzar Control Panel",
+				"descripcion": "Panel de comando para monitorear señales, rutas de escape y estado de la tripulación dentro de la simulación.",
+				"stack": "React · Tailwind · WebSockets",
+				"imagen": "/facundo/proyecto-nebuchadnezzar-control-panel.webp"
+			},
+			{
+				"titulo": "Zion Defense Grid",
+				"descripcion": "Dashboard táctico para visualizar alertas, nodos activos, energía disponible y protocolos defensivos de Zion.",
+				"stack": "Next.js · Cloudflare · D1",
+				"imagen": "/facundo/proyecto-zion-defense-grid.webp"
+			},
+			{
+				"titulo": "Red Pill Access Terminal",
+				"descripcion": "Terminal interactiva para validar identidades, desbloquear accesos y simular decisiones críticas dentro del sistema.",
+				"stack": "React · Node.js · JWT",
+				"imagen": "/facundo/proyecto-red-pill-access-terminal.webp"
+			},
+			{
+				"titulo": "Sentinel Tracker",
+				"descripcion": "Sistema ficticio de rastreo para detectar patrones de movimiento, amenazas cercanas y actividad anómala de centinelas.",
+				"stack": "JavaScript · Canvas · Workers",
+				"imagen": "/facundo/proyecto-sentinel-tracker.webp"
+			},
+			{
+				"titulo": "Operator Signal Console",
+				"descripcion": "Consola visual para operadores con lectura de señales, logs cifrados y estado de conexiones activas a la Matrix.",
+				"stack": "React · Vite · Tailwind",
+				"imagen": "/facundo/proyecto-operator-signal-console.webp"
+			}
+		],
+		"techStack": [
+			{ "nombre": "React", "icono": "react" },
+			{ "nombre": "Next.js", "icono": "nextjs" },
+			{ "nombre": "Node.js", "icono": "nodejs" },
+			{ "nombre": "JavaScript", "icono": "javascript" },
+			{ "nombre": "Tailwind", "icono": "tailwind" },
+			{ "nombre": "Cloudflare", "icono": "cloudflare" }
+		],
+		"socialLinks": [
+			{
+				"label": "GitHub",
+				"href": "https://github.com",
+				"icono": "github"
+			},
+			{
+				"label": "LinkedIn",
+				"href": "https://linkedin.com",
+				"icono": "linkedin"
+			},
+			{
+				"label": "Instagram",
+				"href": "https://instagram.com",
+				"icono": "instagram"
+			},
+			{
+				"label": "Portfolio",
+				"href": "https://google.com",
+				"icono": "external"
+			}
+		]
 	},
 	{
 		"id": 4,
-		"img": "/trip-florencia.jpg",
 		"nombre": "FLORENCIA",
 		"rol": "SIGNAL OPERATOR",
 		"genero": "mujer",

@@ -1,37 +1,33 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import PerfilBase from './PerfilBase';
+import { useNavigate } from "react-router-dom";
+
+import ErrorMessage from "../components/ErrorMessage";
+import ProfileHero from "../components/Profile/ProfileHero";
+import SkillSection from "../components/Profile/SkillSection";
+import TechStackSection from "../components/Profile/TechStackSection";
+import ProjectsCarousel from "../components/Profile/ProjectsCarousel";
+import SocialLinksSection from "../components/Profile/SocialLinksSection";
 
 const PerfilFacundo = ({ tripulante }) => {
   const navigate = useNavigate();
-  const [confettiActivo, setConfettiActivo] = useState(false);
 
-  const lanzarConfetti = () => {
-    setConfettiActivo(true);
-    setTimeout(() => setConfettiActivo(false), 3000);
-  };
+  if (!tripulante) {
+    return <ErrorMessage text="Error al cargar el perfil" />;
+  }
 
   return (
-    <PerfilBase tripulante={tripulante} onBack={() => navigate('/integrantes')}>
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <button
-          onClick={lanzarConfetti}
-          className="border border-green-500 text-green-400 px-4 py-2 rounded font-mono text-xs font-bold
-                     hover:bg-green-500 hover:text-black transition-all duration-300
-                     hover:shadow-[0_0_15px_rgba(0,255,65,0.6)] tracking-widest shrink-0"
-        >
-          [ SECRETO MÓDULO 🎉 ]
-        </button>
-        {confettiActivo && (
-          <div className="flex items-center gap-3 border border-green-500/40 bg-green-900/20 px-4 py-1.5 rounded font-mono text-sm text-green-300 shadow-[0_0_10px_rgba(0,255,65,0.2)]"
-               style={{ animation: 'fadeIn 0.3s ease' }}>
-            <span className="text-xl animate-bounce">🟢</span>
-            <span className="font-bold tracking-widest text-xs uppercase">ACCESO CONCEDIDO: Facundo tiene sus secretos.</span>
-          </div>
-        )}
-      </div>
-    </PerfilBase>
-  );
-}
+    <div className="mx-auto max-w-6xl space-y-10 text-green-100">
+      <ProfileHero tripulante={tripulante} onBack={() => navigate(-1)} />
 
-export default PerfilFacundo
+      <div className="grid gap-10 lg:grid-cols-2">
+        <SkillSection habilidades={tripulante.habilidades} />
+        <TechStackSection techStack={tripulante.techStack} />
+      </div>
+
+      <ProjectsCarousel projectos={tripulante.projectos} />
+
+      <SocialLinksSection socialLinks={tripulante.socialLinks} />
+    </div>
+  );
+};
+
+export default PerfilFacundo;
