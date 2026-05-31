@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import SEO from '../components/SEO'
 import LoadingState from '../components/RedExterna/LoadingState'
 import ErrorState from '../components/RedExterna/ErrorState'
 import PostsList from '../components/RedExterna/PostsList'
@@ -58,29 +59,36 @@ const RedExterna = () => {
 	}
 
 	return (
-		<div className="flex flex-col gap-6 pb-10">
-			<SectionHeader
-				title="RED EXTERNA"
-				subtitle="Datos consumidos desde API externa."
+		<>
+			<SEO
+				title="Red Externa"
+				description="API externa consumida por The System Group 1."
 			/>
+			<div className="flex flex-col gap-6 pb-10">
+				<SectionHeader
+					title="RED EXTERNA"
+					subtitle="Datos consumidos desde API externa."
+				/>
 
-			{loading && <LoadingState />}
+				{loading && <LoadingState />}
 
-			{!loading && error && <ErrorState message={error} />}
+				{!loading && error && <ErrorState message={error} />}
 
-			{!loading && !error && (
-				<>
-					<PostsList posts={postsPagina} />
+				{!loading && !error && (
+					<>
+						<PostsList posts={postsPagina} />
 
-					<Pagination
-						paginaActual={paginaActual}
-						totalPaginas={totalPaginas}
-						onAnterior={irPaginaAnterior}
-						onSiguiente={irPaginaSiguiente}
-					/>
-				</>
-			)}
-		</div>
+						<Pagination
+							paginaActual={paginaActual}
+							totalPaginas={totalPaginas}
+							onAnterior={irPaginaAnterior}
+							onSiguiente={irPaginaSiguiente}
+						/>
+					</>
+				)}
+			</div>
+		</>
+
 	)
 }
 

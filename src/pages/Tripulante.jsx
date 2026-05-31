@@ -6,21 +6,23 @@ import PerfilFacundo from '../profiles/PerfilFacundo'
 import PerfilFlorencia from '../profiles/PerfilFlorencia'
 
 const Tripulante = ({ tripulantes }) => {
-	const { id } = useParams()
-	const tripulante = tripulantes.find((t) => t.id === parseInt(id))
+	const { nombre } = useParams()
+	const nombreNormalizado = nombre.toLocaleLowerCase().trim()
+
+	const tripulante = tripulantes.find((t) => t.nombre.toLocaleLowerCase().trim() === nombreNormalizado)
 
 	if (!tripulante) {
 		return <ErrorMessage text="TRIPULANTE NO ENCONTRADO" />
 	}
 
-	switch (tripulante.id) {
-		case 1:
+	switch (nombreNormalizado) {
+		case "martín":
 			return <PerfilMartin tripulante={tripulante} />
-		case 2:
+		case "rodrigo":
 			return <PerfilRodrigo tripulante={tripulante} />
-		case 3:
+		case "facundo":
 			return <PerfilFacundo tripulante={tripulante} />
-		case 4:
+		case "florencia":
 			return <PerfilFlorencia tripulante={tripulante} />
 		default:
 			return <ErrorMessage text="PERFIL NO IMPLEMENTADO" />

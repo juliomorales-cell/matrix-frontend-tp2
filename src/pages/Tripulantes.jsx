@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import SEO from '../components/SEO'
 import SectionHeader from '../components/SectionHeader'
 import Button from '../components/Button'
 import TeamGrid from '../components/TeamGrid'
@@ -37,26 +38,32 @@ const Tripulantes = ({ tripulantes }) => {
 	}
 
 	return (
-		<div className="flex flex-col gap-6 z-10 relative pb-10">
-			<SectionHeader
-				title="NÚCLEO DE LA TRIPULACIÓN"
-				subtitle="Selecciona una silueta para acceder al expediente."
+		<>
+			<SEO
+				title="Tripulación"
+				description="Listado de integrantes de The System Group 1."
 			/>
+			<div className="flex flex-col gap-6 z-10 relative pb-10">
+				<SectionHeader
+					title="NÚCLEO DE LA TRIPULACIÓN"
+					subtitle="Selecciona una silueta para acceder al expediente."
+				/>
 
-			<audio
-				ref={audioRef}
-				src="/seleccion-tripulante.mp3"
-				loop
-				preload="auto"
-			/>
+				<audio
+					ref={audioRef}
+					src="/seleccion-tripulante.mp3"
+					loop
+					preload="auto"
+				/>
 
-			<Button
-				onClick={toggleAudio}
-				text={audioPlaying ? '🔊 ON' : '🔇 OFF'}
-			/>
+				<Button
+					onClick={toggleAudio}
+					text={audioPlaying ? '🔊 ON' : '🔇 OFF'}
+				/>
 
-			<TeamGrid members={tripulantes} />
-		</div>
+				<TeamGrid members={tripulantes} />
+			</div>
+		</>
 	)
 }
 

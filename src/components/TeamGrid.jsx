@@ -4,8 +4,9 @@ import Card from './Card'
 const TeamGrid = ({ members }) => {
 	const navigate = useNavigate()
 
-	const onClick = (id) => {
-		navigate(`/integrantes/${id}`)
+	const onClick = (nombre) => {
+		const nombreNormalizado = nombre.toLocaleLowerCase().trim()
+		navigate(`/integrantes/${nombreNormalizado}`)
 	}
 
 	return (
@@ -13,7 +14,7 @@ const TeamGrid = ({ members }) => {
 			{members.map((member) => (
 				<Card
 					key={member.id}
-					onClick={() => onClick(member.id)}
+					onClick={() => onClick(member.nombre)}
 					title={member.nombre}
 					subtitle={member.role}
 					imgSrc={member.avatar}

@@ -22,7 +22,7 @@ const MainRoutes = () => {
 				element={<Tripulantes tripulantes={datosTripulantes} />}
 			/>
 			<Route
-				path="/integrantes/:id"
+				path="/integrantes/:nombre"
 				element={<Tripulante tripulantes={datosTripulantes} />}
 			/>
 			<Route path="/datos" element={<ArchivosJSON />} />
