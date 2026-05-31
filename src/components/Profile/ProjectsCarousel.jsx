@@ -17,7 +17,7 @@ const ProjectsCarousel = ({ projectos = [] }) => {
 	}
 
 	return (
-		<section className={sectionClass}>
+		<section className={`${sectionClass} min-w-0 overflow-hidden`}>
 			<div className="space-y-3">
 				<SectionHeader
 					title="Projectos"
@@ -30,32 +30,30 @@ const ProjectsCarousel = ({ projectos = [] }) => {
 				</div>
 			</div>
 
-			<div className={panelClass}>
-				<div className="grid gap-5 lg:grid-cols-[1.3fr_0.7fr]">
-					<div className="group relative min-h-72 overflow-hidden rounded-xl border border-green-500/25 bg-black lg:min-h-[400px]">
+			<div className={`${panelClass} min-w-0 overflow-hidden`}>
+				<div className="grid min-w-0 gap-5 xl:grid-cols-[1.3fr_0.7fr]">
+					<div className="group relative aspect-video w-full min-w-0 overflow-hidden rounded-xl border border-green-500/25 bg-black">
 						<img
 							src={projecto.imagen}
 							alt={projecto.titulo}
-							className="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
+							className="h-full w-full max-w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
 						/>
 
 						<div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 					</div>
 
-					<article className="flex flex-col justify-between rounded-xl border border-green-500/20 bg-black/60 p-5">
-						<div>
-							<p className="mb-2 text-xs text-green-600">
-								[{actual + 1}/{projectos.length}]
-							</p>
+					<article className="min-w-0 rounded-xl border border-green-500/20 bg-black/60 p-5">
+						<p className="mb-2 text-xs text-green-600">
+							[{actual + 1}/{projectos.length}]
+						</p>
 
-							<h3 className="mb-3 text-2xl font-black uppercase text-green-500">
-								{projecto.titulo}
-							</h3>
+						<h3 className="mb-3 break-words text-2xl font-black uppercase text-green-500">
+							{projecto.titulo}
+						</h3>
 
-							<p className="text-sm leading-relaxed text-green-100/75">
-								{projecto.descripcion}
-							</p>
-						</div>
+						<p className="text-sm leading-relaxed text-green-100/75">
+							{projecto.descripcion}
+						</p>
 
 						<div className="mt-5 rounded-lg border border-green-500/20 bg-green-500/10 px-3 py-2 text-xs uppercase tracking-widest text-green-400">
 							{projecto.stack}
@@ -63,14 +61,14 @@ const ProjectsCarousel = ({ projectos = [] }) => {
 					</article>
 				</div>
 
-				<div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+				<div className="mt-5 grid min-w-0 gap-3 sm:grid-cols-2 xl:grid-cols-5">
 					{projectos.map((projectoItem, index) => (
 						<div
 							key={projectoItem.titulo}
 							className={
 								actual === index
-									? 'rounded border border-green-500 shadow-[0_0_18px_rgba(0,255,65,0.35)]'
-									: 'rounded border border-transparent'
+									? 'min-w-0 rounded border border-green-500 shadow-[0_0_18px_rgba(0,255,65,0.35)]'
+									: 'min-w-0 rounded border border-transparent'
 							}
 						>
 							<Card

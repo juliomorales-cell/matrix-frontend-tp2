@@ -7,7 +7,7 @@ import { panelClass } from './profileStyles'
 const ProfileHero = ({ tripulante, onBack }) => {
 	return (
 		<section className={panelClass}>
-			<div className="grid gap-6 md:grid-cols-[190px_1fr] md:items-center">
+			<div className="grid min-w-0 gap-6 xl:grid-cols-[190px_1fr] xl:items-center">
 				<div className="mx-auto h-44 w-44 overflow-hidden rounded-full border-2 border-green-500/60 bg-green-950 shadow-[0_0_35px_rgba(0,255,65,0.3)]">
 					<img
 						src={tripulante.avatar}
@@ -37,7 +37,7 @@ const ProfileHero = ({ tripulante, onBack }) => {
 						{tripulante.bio}
 					</p>
 
-					<div className="mt-5 grid gap-2 sm:grid-cols-3">
+					<div className="mt-5 grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
 						<ProfileInfoItem
 							icon={<FaIdBadge />}
 							label="ID"
