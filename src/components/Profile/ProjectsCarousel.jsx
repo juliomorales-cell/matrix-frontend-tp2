@@ -20,7 +20,7 @@ const ProjectsCarousel = ({ projectos = [] }) => {
 		<section className={`${sectionClass} min-w-0 overflow-hidden`}>
 			<div className="space-y-3">
 				<SectionHeader
-					title="Projectos"
+					title="Proyectos"
 					subtitle="Interfaces desarrolladas dentro de la simulación."
 				/>
 
