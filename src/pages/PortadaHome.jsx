@@ -69,25 +69,16 @@ const PortadaHome = ({ tripulantes }) => {
 							</button>
 						</div>
 					) : (
-						<div className="space-y-6 flex flex-col h-full w-full">
+						<div className="space-y-6 flex flex-col h-full w-full break-all">
 							<h2 className="text-2xl lg:text-3xl font-bold mb-2 flex items-center gap-2 text-green-500">
 								&gt; INICIALIZANDO SISTEMA
-								<span className="animate-pulse font-black text-white">
-									...
-								</span>
 							</h2>
 							<div className="space-y-2 font-mono text-sm text-green-600">
 								<p>
 									CARGANDO INTERFAZ
-									<span className="animate-pulse text-white">
-										...
-									</span>
 								</p>
 								<p>
 									ENLAZANDO MATRIX FRONTEND
-									<span className="animate-pulse text-white">
-										...
-									</span>
 								</p>
 							</div>
 							<div className="space-y-2 mt-8">
@@ -114,9 +105,6 @@ const PortadaHome = ({ tripulantes }) => {
 								) : (
 									<p className="text-green-600 animate-pulse mt-12 text-lg">
 										&gt; DESENCRIPTANDO CÓDIGO FUENTE
-										<span className="animate-pulse text-white">
-											...
-										</span>
 									</p>
 								)}
 							</div>
@@ -127,9 +115,6 @@ const PortadaHome = ({ tripulantes }) => {
 					<div className="w-full xl:w-1/2 border border-green-500 p-6 rounded bg-black/80 shadow-[0_0_15px_rgba(0,255,65,0.2)] flex flex-col animate-[fadeIn_1s_ease-out]">
 						<h2 className="text-2xl font-bold mb-4 text-green-500">
 							&gt; FICHEROS DE LA TRIPULACIÓN
-							<span className="animate-pulse text-white">
-								...
-							</span>
 						</h2>
 						<div className="space-y-1 mb-6 text-xs text-green-600 font-mono border-b border-green-900 pb-4">
 							<p>
