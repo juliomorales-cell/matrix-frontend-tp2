@@ -3,7 +3,6 @@ import ErrorMessage from '../components/ErrorMessage'
 import PerfilMartin from '../profiles/PerfilMartin'
 import PerfilRodrigo from '../profiles/PerfilRodrigo'
 import PerfilFacundo from '../profiles/PerfilFacundo'
-import PerfilFlorencia from '../profiles/PerfilFlorencia'
 
 const Tripulante = ({ tripulantes }) => {
 	const { nombre } = useParams()
@@ -22,8 +21,6 @@ const Tripulante = ({ tripulantes }) => {
 			return <PerfilRodrigo tripulante={tripulante} />
 		case "facundo":
 			return <PerfilFacundo tripulante={tripulante} />
-		case "florencia":
-			return <PerfilFlorencia tripulante={tripulante} />
 		default:
 			return <ErrorMessage text="PERFIL NO IMPLEMENTADO" />
 	}

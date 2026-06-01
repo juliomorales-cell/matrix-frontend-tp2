@@ -15,7 +15,6 @@ La aplicación migra completamente la estructura del TP1 (HTML, CSS y JS Vanilla
 - **Martín** - [GitHub](https://github.com/fguzman3026)
 - **Rodrigo Zocco** - [GitHub](https://github.com/RodrigoZocco)
 - **Facundo** - [GitHub](https://github.com/fazcue)
-- **Florencia** - [GitHub](https://github.com/juliomorales-cell)
 
 ---
 
@@ -130,6 +129,9 @@ El diseño visual está completamente inspirado en la estética cyberpunk de "Th
 
 ![Dashboard Home](public/screenshots/homepage.webp)
 
+### Tripulación
+![Tripulación](public/screenshots/tripulacion.webp)
+
 ### Perfiles individuales
 
 ![Perfil Individual Martín](public/screenshots/perfil_martin.webp)
@@ -199,7 +201,7 @@ Durante el desarrollo de esta entrega se utilizaron las siguientes herramientas 
 - **Auditoría de requisitos**: Se solicitó a la IA una revisión exhaustiva del repositorio frente a la rúbrica del TP2, obteniendo una matriz de cumplimiento detallada que guió las correcciones finales.
 - **Debugging de estilos**: La IA ayudó a detectar problemas visuales (barras de progreso invisibles, íconos con color incorrecto, padding insuficiente) y propuso soluciones con estilos inline garantizados.
 - **Refactorización de componentes**: Se recibieron sugerencias para modularizar `PerfilBase` con subcomponentes (`BarrasProgreso`, `CarruselProyectos`, `RedesSociales`), lo que permitió reutilizar código entre los cuatro perfiles.
-- **Generación de textos**: Las biografías de los tripulantes (Martín, Rodrigo, Facundo, Florencia) fueron redactadas con asistencia de IA, luego revisadas y ajustadas por el equipo.
+- **Generación de textos**: Las biografías de los tripulantes (Martín, Rodrigo, Facundo) fueron redactadas con asistencia de IA, luego revisadas y ajustadas por el equipo.
 
 ### Imágenes Generadas con IA
 

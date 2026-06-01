@@ -192,51 +192,5 @@
 				"icono": "external"
 			}
 		]
-	},
-	{
-		"id": 4,
-		"nombre": "FLORENCIA",
-		"rol": "SIGNAL OPERATOR",
-		"genero": "mujer",
-		"avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=Florencia&baseColor=000000&primaryColor=00FF41",
-		"github": "https://github.com/usuario-florencia",
-		"ubicacion": "González Catán",
-		"edad": "29",
-		"bio": "Operadora de señales con un talento único para diseñar las interfaces que conectan a los liberados con Zion. Su sensibilidad artística convierte el código en experiencias visuales que trascienden la simulación. La música de Cerati es su código fuente.",
-		"habilidades": ["HTML", "CSS", "JavaScript", "Canva"],
-		"peliculas": [
-			{
-				"titulo": "Harry Potter",
-				"poster": "https://image.tmdb.org/t/p/w342/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg"
-			},
-			{
-				"titulo": "El Señor de los Anillos",
-				"poster": "https://image.tmdb.org/t/p/w342/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg"
-			},
-			{
-				"titulo": "Soy Leyenda",
-				"poster": "https://image.tmdb.org/t/p/w342/e6APHKVKkXeEKvqMnGDX39vJFR4.jpg"
-			}
-		],
-		"discos": [
-			{
-				"titulo": "Amor Amarillo",
-				"artista": "Gustavo Cerati",
-				"cover": "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png"
-			},
-			{
-				"titulo": "Dynamo",
-				"artista": "Soda Stereo",
-				"cover": "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png"
-			},
-			{
-				"titulo": "A Head Full of Dreams",
-				"artista": "Coldplay",
-				"cover": "https://upload.wikimedia.org/wikipedia/en/9/9a/Hybrid_theory_album_cover.jpg"
-			}
-		],
-		"nivel": "SIGNAL OPS",
-		"coverImage": "https://media.giphy.com/media/11tHioH2FhZUSI/giphy.gif",
-		"secreto": null
 	}
 ]

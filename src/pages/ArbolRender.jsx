@@ -115,8 +115,6 @@ const ArbolRender = () => {
 															&lt;PerfilRodrigo
 															/&gt; |
 															&lt;PerfilFacundo
-															/&gt; |
-															&lt;PerfilFlorencia
 															/&gt;
 															<ul className="pl-8 mt-1 space-y-1 border-l-2 border-green-900/50 text-green-800 text-[10px]">
 																<li className="relative before:content-[''] before:absolute before:w-4 before:h-px before:bg-green-900/50 before:-left-8 before:top-1.5">
