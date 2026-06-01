@@ -5,7 +5,7 @@ import Button from '../components/Button'
 import TeamGrid from '../components/TeamGrid'
 
 const Tripulantes = ({ tripulantes }) => {
-	const [audioPlaying, setAudioPlaying] = useState(true)
+	const [audioPlaying, setAudioPlaying] = useState(false)
 	const audioRef = useRef(null)
 
 	useEffect(() => {
@@ -58,7 +58,7 @@ const Tripulantes = ({ tripulantes }) => {
 
 				<Button
 					onClick={toggleAudio}
-					text={audioPlaying ? '🔊 ON' : '🔇 OFF'}
+					text={audioPlaying ? 'Pausar música' : 'Activar música ambiental'}
 				/>
 
 				<TeamGrid members={tripulantes} />

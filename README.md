@@ -87,7 +87,7 @@ El diseño visual está completamente inspirado en la estética cyberpunk de "Th
 
 ## ⚙️ Funciones Dinámicas Implementadas en React
 
-### 1. Secuencia de conexión animada (`Home`)
+### 1. Secuencia de conexión animada (`PortadaHome`)
 
 - **Hooks**: `useState`, `useEffect`, `useRef`
 - Controla una simulación de carga con barra de progreso que avanza aleatoriamente hasta el 99%.
@@ -95,28 +95,14 @@ El diseño visual está completamente inspirado en la estética cyberpunk de "Th
 - Al finalizar (`fase === 2`), revela la grilla de tripulantes con animación `fadeIn`.
 - Las tarjetas son componentes `Link` que redirigen a `/integrantes/:id`.
 
-### 2. Barras de progreso animadas (`PerfilBase`)
-
-- **Hooks**: `useState`, `useEffect`
-- Cada habilidad arranca con `width: 0%` y mediante un `setTimeout` de 400ms se setea al valor real (75-95%).
-- La transición dura 1s (`transition-all duration-1000 ease-out`) con efecto de gradiente y sombra neón.
-- Los porcentajes se renderizan dinámicamente en tiempo real.
-
-### 3. Carrusel de proyectos (`PerfilBase`)
-
-- **Hook**: `useState` para índice actual.
-- Navegación cíclica: botones ◀ y ▶ con `setIndice` que respetan límites y reinician al principio/fin.
-- Contador visual de posición (`1/3`, `2/3`, etc.).
-- Las imágenes se obtienen de `tripulante.proyectos` o de placeholders por defecto.
-
-### 4. Filtro en tiempo real del Explorador JSON (`ArchivosJSON`)
+### 2. Filtro en tiempo real del Explorador JSON (`ArchivosJSON`)
 
 - **Hook**: `useMemo`
 - El filtrado se recalcula solo cuando cambia el string de búsqueda, evitando renders innecesarios.
 - Búsqueda insensible a mayúsculas sobre `nombre` y `rol`.
 - Vista conmutable entre tabla HTML y salida cruda JSON (`<pre>`).
 
-### 5. Consumo de API externa con paginación (`RedExterna`)
+### 3. Consumo de API externa con paginación (`RedExterna`)
 
 - **Hooks**: `useState`, `useEffect`
 - Maneja tres estados: **loading** (spinner verde), **error** (alerta roja con diseño cyberpunk), **éxito** (posts paginados).
@@ -124,13 +110,13 @@ El diseño visual está completamente inspirado en la estética cyberpunk de "Th
 - Paginación manual de 5 posts por página con botones PREV/NEXT deshabilitados en extremos.
 - Indicador de página actual (`PÁGINA X DE Y`).
 
-### 6. Galería con Lightbox (`MatrixGallery`)
+### 4. Galería con Lightbox (`GaleriaMatrix`)
 
 - Navegación por teclado: flechas izquierda/derecha para cambiar imagen, tecla ESC para cerrar.
 - Zoom interactivo en la imagen abierta.
 - Audio ambiental con control de volumen neón.
 
-### 7. Bitácora interactiva (`Bitacora`)
+### 5. Bitácora interactiva (`Bitacora`)
 
 - **Hook**: `useState` para almacenar registros.
 - Funcionalidad de agregar y eliminar registros en tiempo real sobre el estado local.
@@ -142,31 +128,33 @@ El diseño visual está completamente inspirado en la estética cyberpunk de "Th
 
 ### Home
 
-![Dashboard Home](public/screenshots/home.jpg)
+![Dashboard Home](public/screenshots/homepage.webp)
 
-### Perfil individual
+### Perfiles individuales
 
-![Perfil Individual](public/screenshots/perfil-individual.jpg)
+![Perfil Individual Martín](public/screenshots/perfil_martin.webp)
+![Perfil Individual Rodrigo](public/screenshots/perfil_rodrigo.webp)
+![Perfil Individual Facundo](public/screenshots/perfil_facundo.webp)
 
 ### Explorador JSON
 
-![Explorador JSON](public/screenshots/explorador-json.jpg)
+![Explorador JSON](public/screenshots/archivos_json.webp)
 
 ### Red externa con paginación
 
-![Red Externa con paginación](public/screenshots/red-externa-paginacion.jpg)
+![Red Externa con paginación](public/screenshots/red_externa.webp)
 
 ### Galería con Ligthbox
 
-![Galería con Lightbox](public/screenshots/galeria.jpg)
+![Galería con Lightbox](public/screenshots/galeria.webp)
 
 ### Bitácora
 
-![Bitácora](public/screenshots/bitacora.jpg)
+![Bitácora](public/screenshots/bitacora.webp)
 
 ### Árbol de renderizado
 
-![Árbol de Renderizado](public/screenshots/bitacora.jpg)
+![Árbol de Renderizado](public/screenshots/arbol_render.webp)
 
 ---
 

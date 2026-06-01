@@ -25,7 +25,7 @@ const Bitacora = () => {
 	])
 	const [nuevaEntrada, setNuevaEntrada] = useState('')
 	const [step, setStep] = useState(0)
-	const [muted, setMuted] = useState(false)
+	const [muted, setMuted] = useState(true)
 
 	const audioNeoRef = useRef(null)
 	const audioWakeRef = useRef(null)
@@ -243,7 +243,7 @@ const Bitacora = () => {
 
 						<Button
 							onClick={toggleMute}
-							text={muted ? '🔇' : '🔊'}
+							text={muted ? 'Activar música ambiental' : 'Pausar música'}
 						/>
 
 						<form
